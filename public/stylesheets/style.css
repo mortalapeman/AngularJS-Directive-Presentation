@@ -6,3 +6,8 @@ body {
 a {
   color: #00B7FF;
 }
+
+.ok {
+  color: green;
+  font-size: 200%;
+}

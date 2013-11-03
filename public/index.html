@@ -11,5 +11,27 @@
 </head>
 <body>
 
+    <form name="reg">
+        <label class="control-group"
+               ng-class="{error: reg.name.$invalid}">
+            User Name:
+
+            <input type="text" name="name" ng-model="userName"
+                   pl-noduplicate required/>
+
+            <tick class="ok" ng-show="reg.name.$valid"></tick>
+
+            <span class="help-block"
+                  ng-show="reg.name.$error.required">
+                Please enter your user name.
+            </span>
+
+            <span class="help-block"
+                  ng-show="reg.name.$error.noduplicate">
+                That username already exists
+            </span>
+        </label>
+    </form>
+
 </body>
 </html>
