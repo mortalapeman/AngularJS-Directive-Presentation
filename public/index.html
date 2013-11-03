@@ -10,6 +10,21 @@
     <script src="app/app.js"></script>
 </head>
 <body>
-
+    <label>Visible/Hidden:
+        <input type="checkbox" ng-model="showVisible" />
+    </label>
+    <div>
+        <p>The element below me takes up space</p>
+        <p pr-visible="showVisible">as you can now see.</p>
+        <p>This visibility directive is just a simple example.</p>
+    </div>
+    <label>Show/Hide:
+        <input type="checkbox" ng-model="showText" />
+    </label>
+    <div>
+        <p>The builtin directive uses display: none</p>
+        <p ng-show="showText">as you can now see.</p>
+        <p>Just here for the spacing.</p>
+    </div>
 </body>
 </html>
