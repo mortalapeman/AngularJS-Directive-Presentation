@@ -1,8 +1,16 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+span {
+margin: 3px;
+width: 80px;
+display: none;
+height: 80px;
+float: left;
 }
-
-a {
-  color: #00B7FF;
+#one {
+background: #f00;
+}
+#two {
+background: #0f0;
+}
+#three {
+background: #00f;
 }

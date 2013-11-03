@@ -4,11 +4,19 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/style.css">
     <script src="jquery/jquery.js"></script>
     <script src="angularjs-bower/angular.js"></script>
     <script src="app/app.js"></script>
 </head>
-<body>
-
-</body>
+<body ng-controller="MainCtrl">
+    <div>
+      <span id="one" plk-fadein="counter == 1"></span>
+      <span id="two" plk-fadein="counter == 2" duration="5000" complete="completed('green')"></span>
+      <span id="three" plk-fadein="counter == 3" easing="linear" duration="2000"></span>
+    </div>
+    <div>
+      <button class="btn" ng-click="counter = counter + 1">Do it!</button>
+    </div>
+  </body>
 </html>
