@@ -12,8 +12,10 @@
 <body ng-controller="MainCtrl">
     <div>
       <span id="one" plk-fadein="counter == 1"></span>
-      <span id="two" plk-fadein="counter == 2" duration="5000" complete="completed('green')"></span>
-      <span id="three" plk-fadein="counter == 3" easing="linear" duration="2000"></span>
+      <span id="two" plk-fadein="counter == 2"
+            duration="5000" complete="completed('green')"></span>
+      <span id="three" plk-fadein="counter == 3" easing="linear"
+            duration="2000"></span>
     </div>
     <div>
       <button class="btn" ng-click="counter = counter + 1">Do it!</button>
