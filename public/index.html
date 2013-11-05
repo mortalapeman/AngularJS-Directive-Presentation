@@ -12,14 +12,14 @@
 
     <div ng-controller="OuterCtrl">
         <label>Outer:
-            <input type="text" ng-model="primitiveValue" />
+            <input type="text" ng-model="model.primitiveValue" />
         </label>
-        <p>Outer Controller Value: {{ primitiveValue }}</p>
+        <p>Outer Controller Value: {{ model.primitiveValue }}</p>
         <div ng-controller="InnerCtrl">
             <label>Inner:
-                <input type="text" ng-model="primitiveValue" />
+                <input type="text" ng-model="model.primitiveValue" />
             </label>
-            <p>Inner Controller Value: {{ primitiveValue }} </p>
+            <p>Inner Controller Value: {{ model.primitiveValue }} </p>
         </div>
     </div>
 
