@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>AngularJS and the Awsomeness Within</title>
+    <link href="css/reset.css" rel="stylesheet" />
+    <meta name="author" content="Eric Pritchett">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=1024" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <link rel="shortcut icon" href="css/favicon.png" />
+    <link rel="apple-touch-icon" href="css/apple-touch-icon.png" />
+    <!-- Code Prettifier: -->
+<link href="css/highlight.css" type="text/css" rel="stylesheet" />
+<script type="text/javascript" src="js/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+
+    <link href="css/style.css" rel="stylesheet" />
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,800italic,300,400,800' rel='stylesheet' type='text/css'>    
+
+
+  </head>
+
+  <body>
+  <div class="fallback-message">
+  <p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+  <p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
+  </div>
+    <div id="impress">
+    <div class='step' >
+    
+<h1>AngularJS</h1>
+
+<h2>and the Awsomeness Within</h2>
+
+<p>by Eric Pritchett</p>
+</div>
+      <div class='step' >
+    
+<h1>Why Another MVC?</h1>
+
+<blockquote>
+<p>Other frameworks deal with HTML’s shortcomings by either abstracting 
+away HTML, CSS, and/or JavaScript or by providing an imperative way 
+for manipulating the DOM. Neither of these address the root problem 
+that HTML was not designed for dynamic views.</p>
+</blockquote>
+
+<p><em>-- angularjs.com</em></p>
+</div>
+      <div class='step' >
+    
+<h1>The View</h1>
+
+<ul>
+<li>Display bindings uses handlebars/mustaches</li>
+<li>Input binding uses ng-model</li>
+</ul>
+<pre><code class='prettyprint '>&lt;body ng-controller=&quot;LoginController&quot;&gt;
+    &lt;form name=&quot;login&quot;&gt;
+        &lt;label&gt;User name:&lt;/label&gt;
+        &lt;input type=&quot;text&quot; ng-model=&quot;userName&quot; /&gt;
+        &lt;label&gt;Password:&lt;/label&gt;
+        &lt;input type=&quot;password&quot; ng-model=&quot;password&quot; /&gt;
+        &lt;input type=&quot;submit&quot; 
+       ng-click=&quot;submit()&quot; value=&quot;Login&quot; /&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+</code></pre></div>
+      <div class='step' >
+    
+<h1>The Controller</h1>
+
+<ul>
+<li>Wire up dependencies </li>
+<li>Define specific view behavior</li>
+</ul>
+<pre><code class='prettyprint '>angular.module('my-app', [])
+.controller('LoginController', 
+    function($scope, $location, $http) {
+        $scope.submit = function() {
+            $http.post('/account/login', {
+                userName: $scope.userName,
+                password: $scope.password
+            }).then(function(resp) {
+                if (resp.data.isAuthenticated) {
+                    $location.path('/home');
+                } else {
+                   /* Display errors */
+               }
+           });
+       }
+})
+</code></pre></div>
+      <div class='step' >
+    
+<h1>The Model</h1>
+
+<ul>
+<li>Plain Javascript objects</li>
+<li>No need to inherit from framework classes</li>
+<li>$scope is not the model</li>
+</ul>
+<pre><code class='prettyprint javascript'>$scope.model = {
+    favoriteTeam: 'Alabama',
+    teamColors: ['Crimson', 'White']
+}
+$scope.$watch('model.favoriteTeam', function(val) {
+    if (val === 'Auburn') {
+        $scope.model.teamColors = ['Burnt Orange',
+                                   'Navy Blue']
+    }
+});
+</code></pre></div>
+      <div class='step' >
+    
+<h1>Scoping</h1>
+
+<p>What is the difference in the markup below?</p>
+
+<hr>
+<pre><code class='prettyprint '>&lt;button onclick=&quot;submitForm()&quot;&gt;Done&lt;/button&gt;
+
+&lt;button ng-click=&quot;submitForm()&quot;&gt;Done&lt;/button&gt;
+</code></pre></div>
+      <div class='step' >
+    
+<h1>Why Angular?</h1>
+
+<ul>
+<li>Sane scoping</li>
+<li>Dependency Injection</li>
+<li>Testing, testing, testing</li>
+<li>Form Validation</li>
+<li>HTML6 Right Now </li>
+</ul>
+</div>
+      <div class='step' >
+    
+<h1>HTML6</h1>
+
+<blockquote>
+<p>Imagine being able to mark something up the way you want to mark it up.
+Imagine changing &lt;div id=&quot;wrapper&quot;&gt; to &lt;wrapper&gt;
+or a better example, making a calendar like:</p>
+</blockquote>
+<pre><code class='prettyprint '>&lt;calendar&gt;
+  &lt;month name=&quot;January&quot;&gt;
+    &lt;day&gt;1&lt;/day&gt;
+    &lt;day&gt;2&lt;/day&gt;
+    &lt;day&gt;3&lt;/day&gt;
+    &lt;!-- ...and so on --&gt;
+  &lt;/month&gt;
+&lt;/calendar&gt;
+</code></pre>
+<p><em>-- html6spec.com</em></p>
+</div>
+      <div class='step' >
+    
+<h1>Angular Directives</h1>
+
+<ul>
+<li>Visible/Hidden</li>
+<li>jQuery.fadeIn</li>
+<li>No Duplicate Names</li>
+<li>Simple Repeater</li>
+</ul>
+
+      </div>
+    <script src="js/impress.js"></script>
+    <script>impress().init();</script>
+  </body>
+</html>
+    

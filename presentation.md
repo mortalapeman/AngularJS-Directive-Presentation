@@ -98,7 +98,7 @@ What is the difference in the markup below?
 ```
 ---
 
-# What's Different?
+# Why Angular?
 
 - Sane scoping
 - Dependency Injection
@@ -131,8 +131,6 @@ _-- html6spec.com_
 # Angular Directives
 
 - Visible/Hidden
-- jQuery fadeIn
-- No duplicate names
-- simple repeater
-
-# Testing
+- jQuery.fadeIn
+- No Duplicate Names
+- Simple Repeater
