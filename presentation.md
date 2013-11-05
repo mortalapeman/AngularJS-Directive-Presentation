@@ -22,9 +22,8 @@ _-- angularjs.com_
 
 # The View 
 
-- Display bindings uses handlbars/mustaches
+- Display bindings uses handlebars/mustaches
 - Input binding uses ng-model
-
 
 ```
 &lt;body ng-controller=&quot;LoginController&quot;&gt;
@@ -44,7 +43,7 @@ _-- angularjs.com_
 # The Controller
 
 - Wire up dependencies 
-- Define spefic view behavior
+- Define specific view behavior
 
 ```
 angular.module('my-app', [])
@@ -68,7 +67,7 @@ angular.module('my-app', [])
 
 # The Model
 
-- Plain javascript objects
+- Plain Javascript objects
 - No need to inherit from framework classes
 - $scope is not the model
 
@@ -135,3 +134,5 @@ _-- html6spec.com_
 - jQuery fadeIn
 - No duplicate names
 - simple repeater
+
+# Testing
