@@ -26,11 +26,11 @@ describe('The login in page', function() {
             });
         }));
 
-        it('should setup the login button', function() {
+        it('should setup the submit button', function() {
             expect($scope.submit).toBeDefined();
         });
 
-        describe('then pressing the submit button', function() {
+        describe('then pressing the submit', function() {
             beforeEach(function() {
                 $scope.userName = 'Bob';
                 $scope.password = 'password';
@@ -38,7 +38,7 @@ describe('The login in page', function() {
             });
 
             it('should submit the login data to the server', function() {
-                expect($http.post).toHaveBeenCalledWith('/account/login', { 
+                expect($http.post).toHaveBeenCalledWith('/account/login', {
                     userName: 'Bob',
                     password: 'password'
                 });
