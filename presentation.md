@@ -66,13 +66,46 @@ angular.module('my-app', [])
 ```
 ---
 
-# What's the Big Deal?
+# The Model
 
 - Plain javascript objects
-- Builtin dependency injection
-- Sweet form validation
-- Strong support for testing in all aspects
-- Brings features of HTML6 to older browsers 
+- No need to inherit from framework classes
+- $scope is not the model
+
+```javascript
+$scope.model = {
+    favoriteTeam: 'Alabama',
+    teamColors: ['Crimson', 'White']
+}
+$scope.$watch('model.favoriteTeam', function(val) {
+    if (val === 'Auburn') {
+        $scope.model.teamColors = ['Burnt Orange',
+                                   'Navy Blue']
+    }
+});
+```
+---
+
+# Scoping
+
+What is the difference in the markup below?
+
+<hr>
+
+```
+&lt;button onclick=&quot;submitForm()&quot;&gt;Done&lt;/button&gt;
+
+&lt;button ng-click=&quot;submitForm()&quot;&gt;Done&lt;/button&gt;
+```
+---
+
+# What's Different?
+
+- Sane scoping
+- Dependency Injection
+- Testing, testing, testing
+- Form Validation
+- HTML6 Right Now 
 
 ---
 
@@ -98,8 +131,7 @@ _-- html6spec.com_
 
 # Angular Directives
 
-- Click and drag
-- Expressions 
-- watch changes
-- fake repeat
-- ipaddress validation
+- Visible/Hidden
+- jQuery fadeIn
+- No duplicate names
+- simple repeater
