@@ -4,11 +4,44 @@
     <meta charset="UTF-8">
     <title></title>
     <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="jasmine/jasmine.css">
+    <script src="jasmine/jasmine.js"></script>
+    <script src="jasmine/jasmine-html.js"></script>
     <script src="jquery/jquery.js"></script>
     <script src="angularjs-bower/angular.js"></script>
+    <script src="angularjs-bower/angular-mocks.js"></script>
     <script src="app/app.js"></script>
+    <script src="specs/appSpec.js"></script>
+    <script type="text/javascript">
+    (function() { 
+        var jasmineEnv = jasmine.getEnv();
+        jasmineEnv.updateInterval = 1000;
+
+        var htmlReporter = new jasmine.HtmlReporter();
+        jasmineEnv.addReporter(htmlReporter);
+
+        jasmineEnv.specFilter = function(spec) {
+          return htmlReporter.specFilter(spec);
+        };
+
+        var currentWindowOnload = window.onload;
+        window.onload = function() {
+          if (currentWindowOnload) {
+            currentWindowOnload();
+          }
+
+          htmlReporter.initializeDom(jasmineEnv.currentRunner_);
+        };
+        function execJasmine() {
+          jasmineEnv.execute();
+        }
+        window.execJasmine = execJasmine;
+      })();
+    </script>
 </head>
 <body>
-
+    <div>
+        <button onclick="execJasmine()">Play!</button>
+    </div>
 </body>
 </html>
