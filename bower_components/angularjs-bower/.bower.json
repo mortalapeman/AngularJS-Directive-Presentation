@@ -1,0 +1,21 @@
+{
+  "name": "angularjs-bower",
+  "main": "angular.js",
+  "ignore": [
+    ".jshintrc",
+    "**/*.txt"
+  ],
+  "dependencies": {},
+  "devDependencies": {},
+  "homepage": "https://github.com/mjaric/angularjs-bower",
+  "_release": "5baf5dd127",
+  "_resolution": {
+    "type": "branch",
+    "branch": "master",
+    "commit": "5baf5dd12749c5d9e1f0197aa8813f005ec34ebf"
+  },
+  "_source": "git://github.com/mjaric/angularjs-bower.git",
+  "_target": "*",
+  "_originalSource": "angularjs-bower",
+  "_direct": true
+}
